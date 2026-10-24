@@ -7,170 +7,533 @@
     <title>About Us - Jawata Sport</title>
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+        html {
+            scroll-behavior: smooth;
         }
 
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #171717;
+        }
+
+        /* HEADER */
+
         header {
-            background-color: #111;
+            background: #101010;
             color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 60px;
+            padding: 20px 6%;
+            border-bottom: 2px solid #ff6500;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .logo {
-            font-size: 28px;
+            font-size: 27px;
             font-weight: bold;
+        }
+
+        .logo span {
+            color: #ff6500;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 25px;
-            font-size: 17px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
-        nav a:hover {
-            color: orange;
+        nav a:hover,
+        nav a.active {
+            color: #ff6500;
         }
+
+        /* HERO SECTION */
+
+        .hero {
+            min-height: 430px;
+            padding: 65px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            color: white;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0, 0, 0, 0.96),
+                    rgba(0, 0, 0, 0.72),
+                    rgba(0, 0, 0, 0.25)
+                ),
+                url("https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1800&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .small-title {
+            color: #ff7200;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 58px);
+            margin-bottom: 22px;
+            line-height: 1.15;
+        }
+
+        .hero h1 span {
+            color: #ff7200;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.9;
+            color: #eeeeee;
+            max-width: 620px;
+        }
+
+        .slogan {
+            color: #ff7900;
+            font-size: 25px;
+            font-weight: bold;
+            margin-top: 25px;
+            letter-spacing: 2px;
+        }
+
+        .hero-badge {
+            border: 2px solid #ff7200;
+            padding: 25px;
+            text-align: center;
+            min-width: 180px;
+            background: rgba(0, 0, 0, 0.65);
+            transform: skew(-4deg);
+        }
+
+        .hero-badge h2 {
+            color: #ff7200;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .hero-badge p {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* ABOUT CARDS */
 
         .about {
-            padding: 80px 60px;
+            padding: 65px 6%;
             text-align: center;
-            min-height: 500px;
+            background: #f7f7f7;
         }
 
-        .about h1 {
-            font-size: 45px;
-            margin-bottom: 25px;
-            color: #111;
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 15px;
         }
 
-        .about p {
-            max-width: 800px;
-            margin: auto;
-            font-size: 20px;
+        .section-title span {
+            color: #ff6500;
+        }
+
+        .section-description {
+            max-width: 750px;
+            margin: 0 auto 40px;
+            color: #555;
+            font-size: 17px;
             line-height: 1.8;
-            color: #444;
         }
 
         .about-box {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 25px;
-            margin-top: 50px;
+            max-width: 1150px;
+            margin: auto;
         }
 
         .box {
-            background-color: white;
-            width: 280px;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            background: white;
+            padding: 35px 25px;
+            border-radius: 14px;
+            border-bottom: 4px solid #ff6500;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.09);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 101, 0, 0.18);
+        }
+
+        .icon {
+            width: 82px;
+            height: 82px;
+            border-radius: 50%;
+            background: #111;
+            border: 5px solid #ff7200;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            margin: 0 auto 22px;
         }
 
         .box h2 {
-            margin-bottom: 15px;
-            color: orange;
+            color: #ff6500;
+            font-size: 25px;
+            margin-bottom: 18px;
         }
 
         .box p {
             font-size: 16px;
-            line-height: 1.6;
+            line-height: 1.8;
+            color: #444;
         }
+
+        /* SPORTS CATEGORIES */
+
+        .sports {
+            padding: 15px 6% 60px;
+            text-align: center;
+            background: #f7f7f7;
+        }
+
+        .sports h2 {
+            font-size: 25px;
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+        }
+
+        .sports h2 span {
+            color: #ff6500;
+        }
+
+        .sports-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .sport-item {
+            background: white;
+            padding: 17px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+            transition: 0.3s;
+        }
+
+        .sport-item:hover {
+            background: #ff6500;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* CALL TO ACTION */
+
+        .cta {
+            background: linear-gradient(120deg, #101010, #292929);
+            padding: 45px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .cta h2 span {
+            color: #ff7200;
+        }
+
+        .cta p {
+            color: #ddd;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .cta a {
+            display: inline-block;
+            background: #ff6500;
+            color: white;
+            text-decoration: none;
+            padding: 14px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .cta a:hover {
+            background: white;
+            color: #111;
+        }
+
+        /* FOOTER */
 
         footer {
-            background-color: #111;
+            background: #080808;
             color: white;
+            padding: 25px 6%;
             text-align: center;
-            padding: 20px;
+            border-top: 2px solid #ff6500;
         }
 
+        .footer-logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .footer-logo span {
+            color: #ff6500;
+        }
+
+        footer p {
+            color: #ccc;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* MOBILE RESPONSIVE */
+
+        @media (max-width: 800px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero {
+                padding: 50px 6%;
+            }
+
+            .hero-badge {
+                display: none;
+            }
+
+            .about-box {
+                grid-template-columns: 1fr;
+                max-width: 450px;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 23px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .sports h2 {
+                font-size: 20px;
+                letter-spacing: 2px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- Header -->
+    <!-- HEADER -->
 
     <header>
-
         <div class="logo">
-            JAWATA SPORT
+            JAWATA <span>SPORT</span>
         </div>
 
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+        </nav>
     </header>
 
+    <!-- HERO SECTION -->
 
-    <!-- About Section -->
+    <section class="hero">
+        <div class="hero-content">
+
+            <div class="small-title">━━ ABOUT US</div>
+
+            <h1>
+                About <span>Jawata Sport</span>
+            </h1>
+
+            <p>
+                Welcome to Jawata Sport! We are a sports brand
+                dedicated to providing quality sports products
+                for players and sports lovers. Our aim is to make
+                sports equipment easily available and provide
+                a great shopping experience for our customers.
+            </p>
+
+            <div class="slogan">
+                Play &nbsp; • &nbsp; Train &nbsp; • &nbsp; Achieve
+            </div>
+
+        </div>
+
+        <div class="hero-badge">
+            <h2>JS</h2>
+            <p>
+                SPORTS<br>
+                BUILDS A<br>
+                BETTER YOU!
+            </p>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
 
     <section class="about">
 
-        <h1>About Jawata Sport</h1>
+        <h2 class="section-title">
+            What Makes Us <span>Different?</span>
+        </h2>
 
-        <p>
-            Welcome to Jawata Sport. We are a sports brand dedicated
-            to providing quality sports products for players and sports
-            lovers. Our aim is to make sports equipment easily available
-            and provide a great shopping experience for our customers.
+        <p class="section-description">
+            At Jawata Sport, we believe every player deserves
+            quality equipment and a great sports experience.
+            Our goal is to support your passion for sports.
         </p>
-
 
         <div class="about-box">
 
             <div class="box">
+                <div class="icon">🎯</div>
 
                 <h2>Our Mission</h2>
 
                 <p>
-                    Our mission is to provide quality sports products
-                    that help players improve their performance.
+                    Our mission is to provide quality sports
+                    products that help players improve their
+                    performance and enjoy every game.
                 </p>
-
             </div>
 
-
             <div class="box">
+                <div class="icon">👁</div>
 
                 <h2>Our Vision</h2>
 
                 <p>
-                    Our vision is to become a trusted sports brand
-                    for sports lovers everywhere.
+                    Our vision is to become a trusted sports
+                    brand for sports lovers everywhere through
+                    quality, service and innovation.
                 </p>
-
             </div>
 
-
             <div class="box">
+                <div class="icon">✓</div>
 
                 <h2>Quality</h2>
 
                 <p>
                     We focus on quality, reliability and customer
-                    satisfaction in our sports products.
+                    satisfaction in our sports products and
+                    shopping experience.
                 </p>
-
             </div>
 
+        </div>
+    </section>
+
+    <!-- SPORTS CATEGORIES -->
+
+    <section class="sports">
+
+        <h2>
+            MORE THAN <span>JUST SPORTS</span>
+        </h2>
+
+        <div class="sports-list">
+            <div class="sport-item">⚽ Football</div>
+            <div class="sport-item">🏀 Basketball</div>
+            <div class="sport-item">🎾 Tennis</div>
+            <div class="sport-item">🏋 Fitness</div>
+            <div class="sport-item">🏸 Badminton</div>
         </div>
 
     </section>
 
+    <!-- CALL TO ACTION -->
 
-    <!-- Footer -->
+    <section class="cta">
+
+        <h2>
+            Ready to <span>Level Up?</span>
+        </h2>
+
+        <p>
+            Discover sports products made for your passion.
+            Find your next favourite equipment at Jawata Sport.
+        </p>
+
+        <a href="products.html">EXPLORE OUR PRODUCTS →</a>
+
+    </section>
+
+    <!-- FOOTER -->
 
     <footer>
+
+        <div class="footer-logo">
+            JAWATA <span>SPORT</span>
+        </div>
+
+        <p>
+            Play Hard. Stay Strong. Achieve More.
+        </p>
 
         <p>
             © 2026 Jawata Sport. All Rights Reserved.
@@ -180,3 +543,14 @@
 
 </body>
 </html>
+
+
+        
+   
+
+
+
+
+
+
+  
