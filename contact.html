@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us - Jawata Sport</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* Header */
+
+        header {
+            background-color: #111;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 17px;
+        }
+
+        nav a:hover {
+            color: orange;
+        }
+
+        /* Contact Section */
+
+        .contact {
+            padding: 60px;
+            text-align: center;
+        }
+
+        .contact h1 {
+            font-size: 45px;
+            margin-bottom: 15px;
+            color: #111;
+        }
+
+        .contact > p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        /* Contact Container */
+
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        /* Contact Information */
+
+        .contact-info {
+            background-color: white;
+            width: 350px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            text-align: left;
+        }
+
+        .contact-info h2 {
+            color: #111;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: #555;
+            margin-bottom: 18px;
+            line-height: 1.6;
+        }
+
+        .contact-info strong {
+            color: #111;
+        }
+
+        /* Contact Form */
+
+        .contact-form {
+            background-color: white;
+            width: 450px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            text-align: left;
+        }
+
+        .contact-form h2 {
+            color: #111;
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 7px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .contact-form textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .btn {
+            background-color: #111;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: orange;
+        }
+
+        /* Footer */
+
+        footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <div class="logo">
+            JAWATA SPORT
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Contact Section -->
+
+    <section class="contact">
+
+        <h1>Contact Us</h1>
+
+        <p>
+            Get in touch with Jawata Sport. We are here to help you.
+        </p>
+
+
+        <div class="contact-container">
+
+
+            <!-- Contact Information -->
+
+            <div class="contact-info">
+
+                <h2>Get In Touch</h2>
+
+                <p>
+                    <strong>📍 Address:</strong><br>
+                    Sialkot, Pakistan
+                </p>
+
+                <p>
+                    <strong>📞 Phone:</strong><br>
+                    +92 3032164929
+                </p>
+
+                <p>
+                    <strong>📧 Email:</strong><br>
+                    tazeem4040@gmail.com
+                </p>
+
+                <p>
+                    <strong>🕒 Opening Hours:</strong><br>
+                    Monday - Saturday<br>
+                    9:00 PM - 3:00 AM
+                </p>
+
+            </div>
+
+
+            <!-- Contact Form -->
+
+            <div class="contact-form">
+
+                <h2>Send Us a Message</h2>
+
+                <form>
+
+                    <label for="name">Name</label>
+
+                    <input 
+                        type="text" 
+                        id="name" 
+                        placeholder="Enter your name"
+                    >
+
+
+                    <label for="email">Email</label>
+
+                    <input 
+                        type="email" 
+                        id="email" 
+                        placeholder="Enter your email"
+                    >
+
+
+                    <label for="subject">Subject</label>
+
+                    <input 
+                        type="text" 
+                        id="subject" 
+                        placeholder="Enter subject"
+                    >
+
+
+                    <label for="message">Message</label>
+
+                    <textarea 
+                        id="message" 
+                        placeholder="Write your message"
+                    ></textarea>
+
+
+                    <button type="submit" class="btn">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 Jawata Sport. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
