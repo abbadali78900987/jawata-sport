@@ -1,10 +1,9 @@
-
+           
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Products - Jawata Sport</title>
 
     <style>
@@ -16,20 +15,20 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            background: #f5f5f5;
+            color: #171717;
         }
 
-        /* Header */
-
         header {
-            background-color: #111;
+            background: #101010;
             color: white;
+            padding: 20px 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 60px;
             flex-wrap: wrap;
             gap: 15px;
+            border-bottom: 3px solid #ff6500;
         }
 
         .logo {
@@ -37,137 +36,189 @@
             font-weight: bold;
         }
 
+        .logo span,
+        .hero h1 span,
+        .products h2 span,
+        footer span {
+            color: #ff6500;
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 25px;
-            font-size: 17px;
+            font-weight: bold;
         }
 
-        nav a:hover {
-            color: orange;
+        nav a:hover,
+        nav a.active {
+            color: #ff6500;
         }
 
-        /* Main Heading */
-
-        .products {
-            padding: 50px 20px;
+        .hero {
+            padding: 65px 7%;
+            background: linear-gradient(90deg, #111, #383838);
+            color: white;
             text-align: center;
         }
 
-        .products h1 {
-            font-size: 40px;
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 52px);
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .products {
+            padding: 45px 20px 20px;
+            text-align: center;
+        }
+
+        .products h2 {
+            font-size: 34px;
             margin-bottom: 15px;
-            color: #111;
         }
 
-        .products > p {
-            font-size: 18px;
+        .products p {
             color: #555;
-            margin-bottom: 30px;
+            line-height: 1.7;
         }
-
-        /* Category Buttons */
 
         .category-links {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 15px;
-            padding: 10px 20px 35px;
+            gap: 12px;
+            padding: 25px 15px;
         }
 
         .category-links button {
-            background-color: #111;
+            padding: 13px 20px;
+            background: #111;
             color: white;
-            padding: 14px 22px;
             border: none;
             border-radius: 5px;
-            font-size: 16px;
             cursor: pointer;
+            font-weight: bold;
         }
 
         .category-links button:hover,
         .category-links button.active {
-            background-color: orange;
+            background: #ff6500;
         }
-
-        /* Product Cards */
 
         .product-container {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 25px;
-            padding: 0 25px 40px;
+            padding: 20px 20px 50px;
+        }
+
+        .product-container[hidden] {
+            display: none;
         }
 
         .product-card {
-            background-color: white;
+            background: white;
             width: 280px;
-            padding: 20px;
+            padding: 18px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            border-bottom: 4px solid #ff6500;
+            box-shadow: 0 5px 18px #00000012;
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px #00000020;
         }
 
         .product-card img {
             width: 100%;
-            height: 220px;
+            height: 210px;
             object-fit: contain;
-            background-color: #f9f9f9;
-            border-radius: 8px;
+            background: #f1f1f1;
+            border-radius: 7px;
             margin-bottom: 15px;
         }
 
-        .product-card h2 {
-            color: #111;
-            font-size: 22px;
-            margin-bottom: 10px;
+        .product-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
         }
 
         .product-card p {
             color: #555;
-            line-height: 1.5;
-            margin-bottom: 12px;
+            line-height: 1.7;
+            margin-bottom: 15px;
         }
 
         .price {
-            color: #e67e22;
-            font-size: 22px;
+            color: #ff6500;
+            font-size: 23px;
             font-weight: bold;
+            padding-top: 12px;
+            border-top: 1px solid #eee;
         }
 
-        /* Footer */
-
-        footer {
-            background-color: #111;
+        .banner {
+            background: #181818;
             color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 20px;
+            padding: 40px 20px;
+            border-top: 3px solid #ff6500;
         }
 
-        /* Mobile Screen */
+        .banner h2 {
+            margin-bottom: 12px;
+        }
+
+        .banner span {
+            color: #ff6500;
+        }
+
+        .banner p {
+            line-height: 1.7;
+        }
+
+        footer {
+            background: #080808;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        footer p {
+            color: #ccc;
+            margin-top: 10px;
+            line-height: 1.7;
+        }
 
         @media (max-width: 600px) {
             header {
-                padding: 20px;
                 justify-content: center;
-                text-align: center;
             }
 
-            nav a {
-                margin: 8px;
-                display: inline-block;
-            }
-
-            .products h1 {
-                font-size: 32px;
+            nav {
+                justify-content: center;
             }
 
             .product-card {
                 width: 100%;
-                max-width: 320px;
+                max-width: 350px;
+            }
+
+            .products h2 {
+                font-size: 28px;
             }
         }
     </style>
@@ -175,38 +226,37 @@
 
 <body>
 
-    <!-- Header -->
-
     <header>
-        <div class="logo">JAWATA SPORT</div>
+        <div class="logo">JAWATA <span>SPORT</span></div>
 
         <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="products.html">Products</a>
+            <a href="home.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html" class="active">Products</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
-    <!-- Products Heading -->
-
-    <section class="products">
-        <h1>Our Products</h1>
-
+    <section class="hero">
+        <h1>Our <span>Products</span></h1>
         <p>
-            Explore our quality sports products for players
-            and sports lovers.
+            Discover our collection of leather jackets,
+            Houzary products and sports gloves.
         </p>
     </section>
 
-    <!-- Product Categories -->
+    <section class="products">
+        <h2>Explore Our <span>Collection</span></h2>
+        <p>Choose a category to explore our products.</p>
+    </section>
 
     <div class="category-links">
         <button class="active" onclick="showProducts('jackets', this)">
             Leather Jackets
         </button>
 
-        <button onclick="showProducts('jackets', this)">
-            Houzary leather jackets
+        <button onclick="showProducts('houzary', this)">
+            Houzary
         </button>
 
         <button onclick="showProducts('full-gloves', this)">
@@ -218,97 +268,82 @@
         </button>
     </div>
 
-    <!-- Leather Jackets -->
-
     <section class="product-container" id="jackets">
-
         <div class="product-card">
-            <img src="images.jfif" alt="Leather Jacket 1">
-            <h2>Houzary Leather Jacket</h2>
+            <img src="images.jfif" alt="Leather Jacket">
+            <h3>Houzary Leather Jacket</h3>
             <p>Stylish and durable leather jacket.</p>
             <div class="price">$85.00</div>
         </div>
 
         <div class="product-card">
-            <img src="images (1).jfif" alt="Leather Jacket 2">
-            <h2>Leather Jacket</h2>
+            <img src="images (4).jfif" alt="Sports Leather Jacket">
+            <h3>Leather Jacket</h3>
             <p>Quality jacket for sports and outdoor wear.</p>
             <div class="price">$75.00</div>
         </div>
-
     </section>
 
-    <!-- Houzary -->
-
     <section class="product-container" id="houzary" hidden>
-
         <div class="product-card">
-            <img src="images (2).jfif" alt="Houzary Product 1">
-            <h2>Houzary</h2>
+            <img src="images (1).jfif" alt="Houzary Product">
+            <h3>Houzary Product</h3>
             <p>Quality Houzary sports product.</p>
             <div class="price">$25.00</div>
         </div>
 
         <div class="product-card">
-            <img src="images (4).jfif" alt="Houzary Product 2">
-            <h2>Houzary Product</h2>
+            <img src="images (2).jfif" alt="Houzary Collection">
+            <h3>Houzary Collection</h3>
             <p>Durable product for sports lovers.</p>
             <div class="price">$30.00</div>
         </div>
-
     </section>
 
-    <!-- Full Gloves -->
-
     <section class="product-container" id="full-gloves" hidden>
-
         <div class="product-card">
-            <img src="Copy_20of_20Copy_20of_201.webp" alt="Full Gloves 1">
-            <h2>Full Gloves</h2>
+            <img src="Copy_20of_20Copy_20of_201.webp" alt="Full Gloves">
+            <h3>Full Gloves</h3>
             <p>Comfortable full-finger sports gloves.</p>
             <div class="price">$5.41</div>
         </div>
 
         <div class="product-card">
-            <img src="images (3).jfif" alt="Full Gloves 2">
-            <h2>Sports Full Gloves</h2>
+            <img src="images (5).jfif" alt="Sports Full Gloves">
+            <h3>Sports Full Gloves</h3>
             <p>Durable gloves for sports activities.</p>
             <div class="price">$8.00</div>
         </div>
-
     </section>
 
-    <!-- Half Gloves -->
-
     <section class="product-container" id="half-gloves" hidden>
-
         <div class="product-card">
-            <img src="Half_finger_men_s_gloves_Dominaance.webp" alt="Half Gloves 1">
-            <h2>Half Gloves</h2>
+            <img src="Half_finger_men_s_gloves_Dominaance.webp" alt="Half Gloves">
+            <h3>Half Gloves</h3>
             <p>Comfortable half-finger sports gloves.</p>
             <div class="price">$6.00</div>
         </div>
 
         <div class="product-card">
-            <img src="images (6).jfif" alt="Half Gloves 2">
-            <h2>Sports Half Gloves</h2>
+            <img src="images (6).jfif" alt="Sports Half Gloves">
+            <h3>Sports Half Gloves</h3>
             <p>Lightweight gloves for sports players.</p>
             <div class="price">$7.00</div>
         </div>
-
     </section>
 
-    <!-- Footer -->
+    <section class="banner">
+        <h2>MORE THAN <span>JUST SPORTS</span></h2>
+        <p>Jawata Sport — Play Hard. Stay Strong. Achieve More.</p>
+    </section>
 
     <footer>
-        <p>© 2026 Jawata Sport. All Rights Reserved.</p>
+        <div class="logo">JAWATA <span>SPORT</span></div>
+        <p>&copy; 2026 Jawata Sport. All Rights Reserved.</p>
     </footer>
-
-    <!-- Category JavaScript -->
 
     <script>
         function showProducts(category, button) {
-
             const sections = document.querySelectorAll(
                 '.product-container'
             );
@@ -333,3 +368,25 @@
 
 </body>
 </html>
+
+
+         
+    
+
+
+    
+          
+
+
+    
+
+
+
+      
+
+
+
+           
+          
+
+  
