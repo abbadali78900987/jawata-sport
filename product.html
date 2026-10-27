@@ -1,0 +1,446 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Products | Jawata Sport</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        header {
+            background: #101010;
+            color: white;
+            padding: 20px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ff6500;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #ff6500;
+        }
+
+        .hero {
+            background: linear-gradient(120deg, #111, #333);
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #ff6500;
+        }
+
+        .hero p {
+            color: #ddd;
+            line-height: 1.7;
+        }
+
+        .section {
+            padding: 45px 6%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .section-title span {
+            color: #ff6500;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 35px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px #00000012;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 24px #00000020;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: contain;
+            background: #fff;
+            padding: 12px;
+            display: block;
+        }
+
+        .product-info {
+            padding: 18px;
+        }
+
+        .category {
+            color: #ff6500;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-info h3 {
+            font-size: 18px;
+            margin: 9px 0;
+        }
+
+        .description {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+            min-height: 42px;
+        }
+
+        .price {
+            font-size: 19px;
+            font-weight: bold;
+            margin: 15px 0;
+            color: #111;
+        }
+
+        .btn {
+            display: block;
+            background: #ff6500;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 12px 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #111;
+        }
+
+        .note {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 13px;
+        }
+
+        footer {
+            background: #101010;
+            color: #ccc;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        footer span {
+            color: #ff6500;
+        }
+
+        @media (max-width: 1000px) {
+            .products {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 700px) {
+            header {
+                justify-content: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .products {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 14px;
+            }
+
+            .product-card img {
+                height: 160px;
+            }
+
+            .product-info {
+                padding: 12px;
+            }
+
+            .product-info h3 {
+                font-size: 15px;
+            }
+
+            .section {
+                padding: 35px 4%;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card img {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">JAWATA <span>SPORT</span></div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="product.html" class="active">Products</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Our <span>Products</span></h1>
+        <p>Discover quality jackets, gloves, bags and accessories.</p>
+        <p>Style, comfort and quality — all in one place!</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Explore Our <span>Collection</span></h2>
+        <p class="subtitle">Find your favourite products at Jawata Sport.</p>
+
+        <div class="products">
+
+            <!-- PRODUCT 1 -->
+            <div class="product-card">
+                <img src="images (4).jfif"
+                     alt="Black Leather Jacket">
+                <div class="product-info">
+                    <span class="category">Leather Wear</span>
+                    <h3>Black Leather Jacket</h3>
+                    <p class="description">Stylish jacket for a classic look.</p>
+                    <p class="price">Rs. 8,500</p>
+                    <a class="btn" href="contact.html">Enquire Now</a>
+                </div>
+            </div>
+
+            <!-- PRODUCT 2 -->
+            <div class="product-card">
+                <img src="images.jfif"
+                     alt="Brown Leather Jacket">
+                <div class="product-info">
+                    <span class="category">Leather Wear</span>
+                    <h3>Brown Leather Jacket</h3>
+                    <p class="description">A smart style for everyday wear.</p>
+                    <p class="price">Rs. 8,500</p>
+                    <a class="btn" href="contact.html">Enquire Now</a>
+                </div>
+            </div>
+
+            <!-- PRODUCT 3 -->
+            <div class="product-card">
+                <img src="images (5).jfif"
+                     alt="Full Finger Gloves">
+                <div class="product-info">
+                    <span class="category">Gloves</span>
+                    <h3>Full Gloves</h3>
+                    <p class="description">Comfortable full-finger gloves.</p>
+                    <p class="price">Rs. 1,500</p>
+                    <a class="btn" href="contact.html">Enquire Now</a>
+                </div>
+            </div>
+
+          
+            <!-- PRODUCT 4 -->
+            <div class="product-card">
+                <img src="images (5).jfif"
+                     alt="images (3).jfif">
+                <div class="product-info">
+                    <span class="category">Gloves</span>
+                    <h3>Full Gloves</h3>
+                    <p class="description">Comfortable full-finger gloves.</p>
+                    <p class="price">Rs. 1,500</p>
+                    <a class="btn" href="contact.html">Enquire Now</a>
+                </div>
+            </div>
+            <!-- PRODUCT 5 -->
+            <div class="product-card">
+                <img src="Half_finger_men_s_gloves_Dominaance - Copy.webp"
+                     alt="Half Finger Gloves">
+                <div class="product-info">
+                    <span class="category">Gloves</span>
+                    <h3>Half Gloves</h3>
+                    <p class="description">Lightweight fingerless glove style.</p>
+                    <p class="price">Rs. 1,200</p>
+                    <a class="btn" href="contact.html">Enquire Now</a>
+                </div>
+            </div>
+
+            <!-- PRODUCT 6 -->
+            <div class="product-card">
+                <img src="images (6).jfif"
+                     alt="Half Finger Gloves">
+                <div class="product-info">
+                    <span class="category">Gloves</span>
+                    <h3>Half Gloves</h3>
+                    <p class="description">Lightweight fingerless glove style.</p>
+                    <p class="price">Rs. 1,200</p>
+                    <a class="btn" href="contact.html">Enquire Now</a>
+                </div>
+            </div>
+             <!-- PRODUCT 7 -->
+            <div class="product-card">
+                <img src="images (8).jfif"
+                     alt=" Leather Bag">
+                <div class="product-info">
+                    <span class="category">Bags</span>
+                    <h3> Leather Bag</h3>
+                    <p class="description">A classic bag with a smart design.</p>
+                    <p class="price">Rs. 4,000</p>
+                    <a class="btn" href="contact.html">Enquire Now</a>
+                </div>
+            </div>
+           
+            <!-- PRODUCT 8 -->
+            <div class="product-card">
+                <img src="images (9).jfif"
+                     alt="Brown Leather Bag">
+                <div class="product-info">
+                    <span class="category">Bags</span>
+                    <h3>Brown Leather Bag</h3>
+                    <p class="description">A classic bag with a smart design.</p>
+                    <p class="price">Rs. 4,000</p>
+                    <a class="btn" href="contact.html">Enquire Now</a>
+                </div>
+            </div>
+
+            <!-- PRODUCT 9 -->
+            <div class="product-card">
+                <img src="76c9ea3445563b836ef5f9d63187acd9.jpg"
+                     alt="76c9ea3445563b836ef5f9d63187acd9.jpg">
+                <div class="product-info">
+                    <span class="category">Accessories</span>
+                    <h3>Leather Wallet</h3>
+                    <p class="description">A simple and practical accessory.</p>
+                    <p class="price">Rs. 1,200</p>
+                    <a class="btn" href="contact.html">Enquire Now</a>
+                </div>
+            </div>
+
+            <!-- PRODUCT 10 -->
+            <div class="product-card">
+                <img src="images (10).jfif"
+                     alt="Leather Belt">
+                <div class="product-info">
+                    <span class="category">Accessories</span>
+                    <h3>Leather Belt</h3>
+                    <p class="description">A classic accessory for your outfit.</p>
+                    <p class="price">Rs. 1,000</p>
+                    <a class="btn" href="contact.html">Enquire Now</a>
+                </div>
+            </div>
+
+            <!-- PRODUCT 11 -->
+            <div class="product-card">
+                <img src="images (11).jfif"
+                     alt="Sports Backpack">
+                <div class="product-info">
+                    <span class="category">Bags</span>
+                    <h3>Sports Backpack</h3>
+                    <p class="description">A useful bag for everyday essentials.</p>
+                    <p class="price">Rs. 2,500</p>
+                    <a class="btn" href="contact.html">Enquire Now</a>
+                </div>
+            </div>
+
+            <!-- PRODUCT 12 -->
+            <div class="product-card">
+                <img src="images (12).jfif"
+                     alt="Gym Bag">
+                <div class="product-info">
+                    <span class="category">Bags</span>
+                    <h3>Gym Bag</h3>
+                    <p class="description">Carry your workout essentials easily.</p>
+                    <p class="price">Rs. 2,000</p>
+                    <a class="btn" href="contact.html">Enquire Now</a>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="note">
+            Prices shown are sample prices. Update them to your actual prices before publishing.
+        </p>
+    </section>
+
+    <footer>
+        <p><strong>JAWATA <span>SPORT</span></strong></p>
+        <p>Your style, your sport, your choice.</p>
+        <p>&copy; 2026 Jawata Sport. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

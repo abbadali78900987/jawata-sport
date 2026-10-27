@@ -1,0 +1,593 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jawata Sport | Premium Sports Gear</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --orange: #ff6500;
+    --black: #101010;
+    --white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #171717;
+}
+
+/* NAVIGATION */
+header {
+    background: var(--black);
+    color: white;
+    padding: 20px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-bottom: 2px solid var(--orange);
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--orange);
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--orange);
+}
+
+/* HERO BANNER */
+.hero {
+    min-height: 490px;
+    padding: 75px 7%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg,
+        rgba(0,0,0,0.97) 0%,
+        rgba(0,0,0,0.85) 45%,
+        rgba(30,20,15,0.55) 100%),
+        url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1600&q=85")
+        center/cover;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 130%;
+    background: var(--orange);
+    right: 18%;
+    top: -10%;
+    transform: rotate(25deg);
+    opacity: 0.8;
+}
+
+.hero-content {
+    max-width: 650px;
+    position: relative;
+    z-index: 1;
+}
+
+.tagline {
+    color: var(--orange);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    color: white;
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.1;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: var(--orange);
+}
+
+.hero p {
+    color: #dddddd;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    max-width: 520px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--orange);
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    color: var(--black);
+    transform: translateY(-3px);
+}
+
+/* FEATURES */
+.features {
+    background: white;
+    padding: 25px 6%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.feature {
+    padding: 10px;
+}
+
+.feature h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.feature p {
+    color: #666;
+    font-size: 13px;
+}
+
+/* SECTION HEADING */
+.categories {
+    padding: 65px 6%;
+    text-align: center;
+}
+
+.small-title {
+    color: var(--orange);
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-size: clamp(28px, 4vw, 40px);
+    margin-bottom: 15px;
+}
+
+.section-title span {
+    color: var(--orange);
+}
+
+.section-description {
+    color: #666;
+    margin-bottom: 38px;
+    line-height: 1.7;
+}
+
+/* PRODUCT CARDS */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    text-align: left;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 22px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.product-image {
+    height: 230px;
+    background: #222;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.08);
+}
+
+.product-info {
+    padding: 23px;
+}
+
+.product-info h3 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.product-info p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.product-link {
+    display: inline-block;
+    color: var(--orange);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.product-link:hover {
+    color: #111;
+}
+
+/* PROMOTION BANNER */
+.promo {
+    margin: 10px 6% 65px;
+    padding: 55px 30px;
+    background: linear-gradient(120deg, #101010, #292929);
+    border-left: 7px solid var(--orange);
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+}
+
+.promo h2 {
+    font-size: clamp(25px, 4vw, 36px);
+    margin-bottom: 15px;
+}
+
+.promo h2 span {
+    color: var(--orange);
+}
+
+.promo p {
+    color: #ddd;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* FOOTER */
+footer {
+    background: #101010;
+    color: white;
+    padding: 45px 6% 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 35px;
+    margin-bottom: 35px;
+}
+
+footer h3 {
+    color: var(--orange);
+    margin-bottom: 18px;
+}
+
+footer p,
+footer a {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 2;
+}
+
+footer a {
+    display: block;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--orange);
+}
+
+.copyright {
+    border-top: 1px solid #444;
+    text-align: center;
+    padding-top: 20px;
+    color: #aaa;
+    font-size: 13px;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 750px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .hero {
+        min-height: 420px;
+        padding: 55px 6%;
+    }
+
+    .hero::after {
+        right: 5%;
+        opacity: 0.3;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image {
+        height: 260px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .categories {
+        padding: 45px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR -->
+<header>
+    <div class="logo">JAWATA <span>SPORT</span></div>
+
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="product.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-content">
+
+        <div class="tagline">PREMIUM SPORTS GEAR</div>
+
+        <h1>
+            JAWATA <span>SPORT</span><br>
+            GEAR UP. PLAY BETTER.
+        </h1>
+
+        <p>
+            Discover your next favourite sports gear.
+            Explore stylish jackets, full gloves and half gloves
+            made for your passion, comfort and performance.
+        </p>
+
+        <a href="product.html" class="btn">SHOP COLLECTION &rarr;</a>
+
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+
+    <div class="feature">
+        <h3>★ Quality Products</h3>
+        <p>Sports gear for your collection</p>
+    </div>
+
+    <div class="feature">
+        <h3>⚡ Sporty Style</h3>
+        <p>Style that matches your passion</p>
+    </div>
+
+    <div class="feature">
+        <h3>✓ Easy Browsing</h3>
+        <p>Explore our products with ease</p>
+    </div>
+
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories" id="categories">
+
+    <div class="small-title">FIND YOUR GEAR</div>
+
+    <h2 class="section-title">
+        OUR <span>SPORTS COLLECTION</span>
+    </h2>
+
+    <p class="section-description">
+        Explore our collection and find the gear that suits your style.
+    </p>
+
+    <div class="product-grid">
+
+        <!-- JACKET -->
+        <div class="product-card">
+
+            <div class="product-image">
+                <img
+                src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=85"
+                alt="Stylish jacket"
+                loading="lazy">
+            </div>
+
+            <div class="product-info">
+                <h3>Leather Jackets</h3>
+
+                <p>
+                    Explore stylish jackets and discover
+                    your favourite look.
+                </p>
+
+                <a href="product.html" class="product-link">
+                    EXPLORE JACKETS &rarr;
+                </a>
+            </div>
+
+        </div>
+
+        <!-- FULL GLOVES -->
+        <div class="product-card">
+
+            <div class="product-image">
+                <img
+                src="https://images.unsplash.com/photo-1583473848882-f9a5bc7fd2ee?auto=format&fit=crop&w=800&q=85"
+                alt="Sports equipment"
+                loading="lazy">
+            </div>
+
+            <div class="product-info">
+                <h3>Full Gloves</h3>
+
+                <p>
+                    Check out our full-finger glove collection
+                    for your sports needs.
+                </p>
+
+                <a href="product.html" class="product-link">
+                    EXPLORE FULL GLOVES &rarr;
+                </a>
+            </div>
+
+        </div>
+
+        <!-- HALF GLOVES -->
+        <div class="product-card">
+
+            <div class="product-image">
+                <img
+                src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=85"
+                alt="Fitness and sports training"
+                loading="lazy">
+            </div>
+
+            <div class="product-info">
+                <h3>Half Gloves</h3>
+
+                <p>
+                    Discover our half-glove collection
+                    for a sporty look.
+                </p>
+
+                <a href="product.html" class="product-link">
+                    EXPLORE HALF GLOVES &rarr;
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- PROMOTION -->
+<section class="promo">
+
+    <h2>READY TO <span>LEVEL UP?</span></h2>
+
+    <p>
+        Your sports journey starts here.
+        Discover the Jawata Sport collection today!
+    </p>
+
+    <a href="product.html" class="btn">VIEW ALL PRODUCTS &rarr;</a>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+            <div class="logo">JAWATA <span>SPORT</span></div>
+
+            <p>
+                Your Sports, Your Style,<br>
+                Your Passion!
+            </p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div>
+            <h3>Our Collection</h3>
+
+            <p>Leather Jackets</p>
+            <p>Full Gloves</p>
+            <p>Half Gloves</p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        &copy; 2026 Jawata Sport. All Rights Reserved.
+    </div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,584 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us | Jawata Sport</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --orange: #ff6500;
+    --black: #101010;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+/* HEADER */
+header {
+    background: #101010;
+    color: white;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-bottom: 2px solid var(--orange);
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--orange);
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--orange);
+}
+
+/* ABOUT BANNER */
+.hero {
+    min-height: 330px;
+    padding: 70px 7%;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg,
+        rgba(0,0,0,0.94),
+        rgba(0,0,0,0.60)),
+        url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1600&q=85")
+        center/cover;
+    color: white;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.tagline {
+    color: var(--orange);
+    font-size: 14px;
+    letter-spacing: 5px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 60px);
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--orange);
+}
+
+.hero p {
+    color: #ddd;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 600px;
+}
+
+/* COMMON SECTION */
+section.content {
+    padding: 65px 7%;
+}
+
+.section-label {
+    color: var(--orange);
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 13px;
+}
+
+h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+h2 span {
+    color: var(--orange);
+}
+
+.description {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* OUR STORY */
+.story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 45px;
+}
+
+.story-image {
+    height: 390px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 8px 8px 0 var(--orange);
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.story-text p {
+    margin-bottom: 17px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--orange);
+    color: white;
+    text-decoration: none;
+    padding: 14px 26px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 12px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #111;
+    transform: translateY(-3px);
+}
+
+/* MISSION AND VISION */
+.values {
+    background: #111;
+    color: white;
+    padding: 60px 7%;
+    text-align: center;
+}
+
+.values > p {
+    color: #ccc;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.value-card {
+    background: #202020;
+    padding: 32px 22px;
+    border-radius: 10px;
+    border-bottom: 4px solid var(--orange);
+    transition: 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-7px);
+}
+
+.value-icon {
+    font-size: 40px;
+    margin-bottom: 18px;
+}
+
+.value-card h3 {
+    color: var(--orange);
+    font-size: 21px;
+    margin-bottom: 14px;
+}
+
+.value-card p {
+    color: #ccc;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+/* WHY CHOOSE US */
+.why-us {
+    text-align: center;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.why-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px #0000000d;
+    transition: 0.3s;
+}
+
+.why-card:hover {
+    box-shadow: 0 10px 25px #00000018;
+    transform: translateY(-5px);
+}
+
+.why-card h3 {
+    margin-bottom: 12px;
+}
+
+.why-card p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+/* CALL TO ACTION */
+.cta {
+    margin: 0 6% 65px;
+    background: linear-gradient(120deg, #101010, #303030);
+    border-left: 7px solid var(--orange);
+    padding: 50px 25px;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+}
+
+.cta h2 {
+    font-size: clamp(25px, 4vw, 36px);
+}
+
+.cta p {
+    color: #ddd;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* FOOTER */
+footer {
+    background: #101010;
+    color: white;
+    padding: 45px 6% 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    margin-bottom: 35px;
+}
+
+footer h3 {
+    color: var(--orange);
+    margin-bottom: 18px;
+}
+
+footer p,
+footer a {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 2;
+}
+
+footer a {
+    display: block;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--orange);
+}
+
+.copyright {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 750px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .story {
+        grid-template-columns: 1fr;
+    }
+
+    .story-image {
+        height: 280px;
+    }
+
+    .values-grid,
+    .why-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 55px 6%;
+    }
+
+    section.content {
+        padding: 45px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">JAWATA <span>SPORT</span></div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="product.html">Products</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- ABOUT HERO -->
+<section class="hero">
+    <div class="hero-content">
+
+        <div class="tagline">GET TO KNOW US</div>
+
+        <h1>ABOUT <span>JAWATA SPORT</span></h1>
+
+        <p>
+            Your Sports, Your Style, Your Passion!
+            Discover our passion for sports gear,
+            quality products and sporty style.
+        </p>
+
+    </div>
+</section>
+
+<!-- OUR STORY -->
+<section class="content">
+    <div class="story">
+
+        <div class="story-image">
+            <img
+                src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=1000&q=85"
+                alt="Stylish sportswear jacket"
+                loading="lazy">
+        </div>
+
+        <div class="story-text">
+
+            <div class="section-label">OUR STORY</div>
+
+            <h2>WELCOME TO <span>JAWATA SPORT</span></h2>
+
+            <p class="description">
+                Jawata Sport is a sports gear brand created for
+                people who love sporty style, comfort and quality.
+                We bring together a collection of jackets,
+                full gloves and half gloves.
+            </p>
+
+            <p class="description">
+                Our goal is to make exploring sports products
+                simple and enjoyable. We want every visitor
+                to discover products that match their style
+                and passion for sports.
+            </p>
+
+            <a href="product.html" class="btn">
+                EXPLORE OUR PRODUCTS →
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<!-- MISSION AND VALUES -->
+<section class="values">
+
+    <div class="section-label">WHAT DRIVES US</div>
+
+    <h2>OUR <span>MISSION & VALUES</span></h2>
+
+    <p>
+        Our passion inspires everything we do.
+        These are the values behind Jawata Sport.
+    </p>
+
+    <div class="values-grid">
+
+        <div class="value-card">
+            <div class="value-icon">🎯</div>
+            <h3>Our Mission</h3>
+            <p>
+                To offer an enjoyable shopping experience
+                and help customers discover sports gear
+                that suits their needs.
+            </p>
+        </div>
+
+        <div class="value-card">
+            <div class="value-icon">🏆</div>
+            <h3>Our Vision</h3>
+            <p>
+                To grow Jawata Sport into a recognised
+                sports gear brand known for style,
+                trust and customer satisfaction.
+            </p>
+        </div>
+
+        <div class="value-card">
+            <div class="value-icon">🤝</div>
+            <h3>Our Values</h3>
+            <p>
+                We believe in quality, honest communication,
+                customer care and a passion for sports.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="content why-us">
+
+    <div class="section-label">THE JAWATA DIFFERENCE</div>
+
+    <h2>WHY CHOOSE <span>US?</span></h2>
+
+    <p class="description">
+        We make it easy to explore our sports collection.
+    </p>
+
+    <div class="why-grid">
+
+        <div class="why-card">
+            <h3>🧥 Stylish Collection</h3>
+            <p>
+                Explore jackets and sports gloves
+                in one convenient place.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <h3>⚡ Easy Experience</h3>
+            <p>
+                Browse our website and discover
+                products with ease.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <h3>🧡 Customer Focus</h3>
+            <p>
+                We aim to make every visit to
+                Jawata Sport clear and enjoyable.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="cta">
+
+    <h2>READY TO EXPLORE <span>OUR GEAR?</span></h2>
+
+    <p>
+        Find your style. Follow your passion.
+        Explore the Jawata Sport collection.
+    </p>
+
+    <a href="product.html" class="btn">
+        VIEW OUR PRODUCTS →
+    </a>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+            <div class="logo">JAWATA <span>SPORT</span></div>
+
+            <p>
+                Your Sports, Your Style,<br>
+                Your Passion!
+            </p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div>
+            <h3>Our Collection</h3>
+
+            <p>Leather Jackets</p>
+            <p>Full Gloves</p>
+            <p>Half Gloves</p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        &copy; 2026 Jawata Sport. All Rights Reserved.
+    </div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,403 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | Jawata Sport</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        header {
+            background: #101010;
+            color: white;
+            padding: 20px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ff6500;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #ff6500;
+        }
+
+        .hero {
+            background: linear-gradient(120deg, #111, #333);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #ff6500;
+        }
+
+        .hero p {
+            color: #ddd;
+            line-height: 1.7;
+        }
+
+        .section {
+            padding: 45px 6%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .section-title span {
+            color: #ff6500;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 30px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .contact-info {
+            background: #111;
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .contact-info h2 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info h2 span {
+            color: #ff6500;
+        }
+
+        .contact-info > p {
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            margin-bottom: 23px;
+            line-height: 1.7;
+        }
+
+        .info-item h3 {
+            color: #ff6500;
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        .info-item p,
+        .info-item a {
+            color: #eee;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px #00000010;
+        }
+
+        .contact-form h2 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .contact-form h2 span {
+            color: #ff6500;
+        }
+
+        .contact-form > p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+            outline: none;
+            background: #fff;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #ff6500;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        .btn {
+            width: 100%;
+            border: none;
+            border-radius: 6px;
+            padding: 14px;
+            background: #ff6500;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #111;
+        }
+
+        .form-note {
+            color: #777;
+            font-size: 12px;
+            line-height: 1.6;
+            margin-top: 12px;
+        }
+
+        footer {
+            background: #101010;
+            color: #ccc;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        footer span {
+            color: #ff6500;
+        }
+
+        @media (max-width: 800px) {
+            header {
+                justify-content: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 33px;
+            }
+
+            .section {
+                padding: 35px 4%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">JAWATA <span>SPORT</span></div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Contact <span>Us</span></h1>
+        <p>Have a question about our products? We would love to hear from you.</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <p class="subtitle">
+            Contact Jawata Sport for product information and enquiries.
+        </p>
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+                <h2>Let's Talk <span>!</span></h2>
+
+                <p>
+                    We are happy to help you learn more about our
+                    jackets, gloves, bags and accessories.
+                </p>
+
+                <div class="info-item">
+                    <h3>📍 Location</h3>
+                    <p>Pakistan</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>✉ Email</h3>
+                    <p>tazeem4040@gmail.com</p>
+                    <!-- Add your real email address here when available -->
+                </div>
+
+                <div class="info-item">
+                    <h3>🛍 Our Products</h3>
+                    <p>Leather Jackets, Full Gloves, Half Gloves, Bags and Accessories.</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>🕒 Business Hours</h3>
+                    <p>Monday - Saturday</p>
+                    <p>Hours to be confirmed</p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Send Us a <span>Message</span></h2>
+
+                <p>
+                    Fill out the form below to prepare your enquiry.
+                </p>
+
+                <form action="tazeem4040@gmail.com"
+                      method="post"
+                      enctype="text/plain">
+
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text"
+                               id="name"
+                               name="Name"
+                               placeholder="Enter your name"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email"
+                               id="email"
+                               name="Email"
+                               placeholder="Enter your email address"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product">Select Product</label>
+                        <select id="product" name="Product" required>
+                            <option value="">Choose a product</option>
+                            <option>Leather Jacket</option>
+                            <option>Full Gloves</option>
+                            <option>Half Gloves</option>
+                            <option>Leather Bag</option>
+                            <option>Leather Wallet</option>
+                            <option>Leather Belt</option>
+                            <option>Sports Backpack</option>
+                            <option>Gym Bag</option>
+                            <option>Other Product</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message"
+                                  name="Message"
+                                  placeholder="Write your message here..."
+                                  required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">
+                        Send Message
+                    </button>
+
+                    <p class="form-note">
+                        Note: Replace YOUR-EMAIL@example.com with your real email.
+                        The form uses your device's email application and may not
+                        work if no email application is configured.
+                    </p>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>JAWATA <span>SPORT</span></strong></p>
+        <p>Your style, your sport, your choice.</p>
+        <p>&copy; 2026 Jawata Sport. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
